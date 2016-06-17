@@ -9,35 +9,27 @@ either of the two the sets but not both (C △ D = {1, 4} △ {2, 3} = {1, 2, 3,
 function sym(args)
 {
 	  var output = []; // contain the output.
-    var flattenArray = []; //all arrays from the seconds will be flatteren...
 	  var temp = arguments[0]; // contain the first array in the argumment.
-
-    //console.log('array numéro : 1' + ' => [' + temp + ']');
+    console.log('array numéro : 1' + ' => [' + temp + ']');
     for(var i = 1; i < arguments.length; i++){ // we loop from the second argument's array.
-    //console.log('array numéro : ' + (i + 1) + ' => [' + arguments[i] + ']');
-    	for(var j = 0; j < arguments[i].length; j++){ //We loop on each element of the array.
-        flattenArray.push(arguments[i][j]);
+    console.log('array numéro : ' + (i + 1) + ' => [' + arguments[i] + ']');
+    	for(var j = 0; j < arguments[i].length; j++){ //We loop on each element of the array. 
+	    	idx = temp.indexOf(arguments[i][j]); // we get the currennt index that match.
+        
+        console.log(idx);
+        if(idx > -1){
+          //console.log(temp[idx]);
+          temp.splice(idx,1);
+        }
+			  while(idx == -1){
+		        output.push(arguments[i][j]);
+		      	idx = output.indexOf(arguments[i][j], idx + 1); // we increase to the next index.
+		    }
     	}
     }
 
-    console.log('flatteren : ' + flattenArray);
-    for(var i = 0; i < flattenArray.length; i++){ //We loop on each element of the array.
-        
-      idx = temp.indexOf(flattenArray[i]); // we get the currennt index that match.
-        
-      console.log(idx);
-
-      if(idx > -1){
-        //console.log(temp[idx]);
-        temp.splice(idx,1);
-      }
-      while(idx == -1){
-        output.push(flattenArray[i]);
-        idx = output.indexOf(flattenArray[i], idx + 1); // we increase to the next index.
-      }
-    }
     output = output.concat(temp);
-    console.log(output);
+
     var uniqueValueOutput = output.filter(function(item, pos) {
       return output.indexOf(item) == pos;
     })
