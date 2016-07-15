@@ -10,9 +10,9 @@ function sumFibs(num) {
   var fib = 1;
   var sum = fib0;
 
-  while ( fib <= num){  // tant que l'argument est inferieur et egale à fib.
-    if (fib % 2) {      // si fib modulo est true
-        sum += fib1;    // On ajoute fib 1 à la somme.
+  while (fib <= num){  // tant que l'argument est inferieur et egale à fib.
+    if (fib % 2) {      // si fib est divisible par 2.
+        sum += fib1;    // On ajoute fib à la somme.
     }
 
     fib = fib0 + fib1; 

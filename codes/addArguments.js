@@ -4,33 +4,27 @@
 */
 function addTogether(numberOne, numberTwo) {
 
-	if(typeof numberOne == 'number'){
-		if(arguments.length < 2){
-			return function(askNumberTwo) { // la closure. 
-				if(typeof askNumberTwo == 'number') {
-					// return numberOne + askNumberTwo;
-					console.log(numberOne + askNumberTwo) ;
-				} else {
-					// return undefined;
-					console.log(undefined);
+	if(typeof numberOne == 'number'){ 					// Si le type du premier argument est un nombre.
+		if(arguments.length < 2){ 								// Si il y qu'un seul argument.
+			return function(askNumberTwo) { 							// On crée la closure qui demandera un deuxième argument. 
+				if(typeof askNumberTwo == 'number') { 						// Si le deuxième argument est un nombre.
+					return numberOne + askNumberTwo; 							// On retourne une addition des deux arguments.
+				} else {												    // Si le deuxième argument n'est pas un nombre.
+					return undefined;                  							// On retourne indefinie
 				}
 			};
 
-		} else if (arguments.length > 2) {
-			// return undefined;
-			console.log(undefined);
-		} else {
-			if(typeof numberTwo == 'number') {
-              // return numberOne + numberTwo;
-			  console.log(numberOne + numberTwo);
-			} else {
-				// return undefined;
-		        console.log(undefined);
+		} else if (arguments.length > 2) { 				       // Ou si il y a plus de deux arguments.
+			return undefined;										// On retourne indefinie.
+		} else {                                               // Sinon il y bien deux arguments.
+			if(typeof numberTwo == 'number') {                      // Si le deuxième argument est un nombre.
+              return numberOne + numberTwo;                              // On additionne et retoune la valeur des deux arguments.
+			} else {										   // Si le deuxième argument n'est pas un nombre. 
+				return undefined;									// On retourne indefenie.
 			}
 		}  
-	} else {
-		    // return undefined;
-		    console.log(undefined);
+	} else {                                           // Si le premier argument n'est pas un nombre.
+		    return undefined;                             // On retourne indéfinie.
 	}
 };
 
@@ -39,7 +33,7 @@ function addTogether(numberOne, numberTwo) {
 $(document).ready(function()
 {
   // $(".test").html(addTogether(6));
-  $(".test").html(addTogether(2)([3]));
+  $(".test").html(addTogether(2)(3));
 });
  
  // addTogether(2, 3) should return 5. OK
