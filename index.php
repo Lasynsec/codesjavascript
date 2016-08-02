@@ -8,7 +8,7 @@
   <body>
       <p class='test'></p>
       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-     <script src="http://practice.com/javascript/codesjavascript/codes/symetricDifference.js"></script>
-     <!-- <script src="http://practice.com/javascript/codesjavascript/testme.js"></script> -->
+     <script src="http://practice.com/javascript/codesjavascript/codes/symetricDifference.js"></script> 
+     <!--<script src="http://practice.com/javascript/codesjavascript/testme.js"></script>-->
   </body>
 </html>

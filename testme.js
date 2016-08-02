@@ -16,8 +16,14 @@ for(var i = 1; i < tab.length; i++){ // we loop from the second argument's array
 }
 
 console.log(flattenArray);
-//Don't touch to the code below
+//Don't touch the code below
 $(document).ready(function()
 {
 	$(".test").html(flattenArray);
 });
+
+// [1, 2, 3], [5, 2, 1, 4]                  return [3, 4, 5]
+// [1, 2, 5], [2, 3, 5], [3, 4, 5]          return [1, 4, 5]
+// [1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5] return [1, 4, 5]
+// [3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3] return [2, 3, 4, 6, 7]
+// [3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1] return [1, 2, 4, 5, 6, 7, 8, 9]
