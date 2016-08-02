@@ -10,24 +10,23 @@ combinaison :  [["A","T"],["T","A"],["C","G"],["G","C"],]
 function pair(str) 
 {
     var output = [];                                          // le tableau qui contiendra tous en sortie.
-
-    var adnArray = str.split("");                             // On split la chaine en array
-    var idx;                                                  // contiendra l'index courant
-
+    var adnArray = str.split("");                             // On split la chaine en array.
+    var idx;                                                  // contiendra l'index courant.
     var pairAdn = [["A","T"],["T","A"],["C","G"],["G","C"]];  // tableau brut de reference adn pair.
     var pairList = ["A", "T", "C", "G"];                      // Element à trouver.
 
-    for(var i = 0; i < adnArray.length; i++)                  // On parcours le tableau adnArray.
+    for(var i = 0; i < adnArray.length; i++)                  // On parcours le tableau adnArray du paramètre..
     {
-      idx = pairList.indexOf(adnArray[i]);                    // On recherche des elements correspondant ds les array pairAdn et pairList.
+      idx = pairList.indexOf(adnArray[i]);                      // On recherche l'index des elements correspondant ds les array pairAdn(Reference) et pairList.
 
-      while(idx != -1)                                        // Tant que des éléments correspondent
+      while(idx != -1)                                          // Tant que des indexes correspondent.
       {
-        output.push(pairAdn[idx]);                            // On les stock dans le tableau output.
-        idx = pairList.indexOf(adnArray[i], idx + 1);         // On passe à l'indice suivant.
+        output.push(pairAdn[idx]);                                  // On les stocks dans le tableau output.
+        idx = pairList.indexOf(adnArray[i], idx + 1);               // On passe à l'indice suivant.
       }
     }
-  return output;                                              // On retourne la valeur du tableau output.
+
+  return output;                                              // On retourne la valeur du tableau output(la sortie).
 }
 
 //Don't touch to the code below

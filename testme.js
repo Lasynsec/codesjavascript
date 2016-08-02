@@ -1,14 +1,23 @@
-for(var i = 0; i <arguments.length; i++){
- 		for(var j = 0; j < arguments[i].length; j++){
- 			idx = output.indexOf(arguments[i][j]);
-            
-            console.log(idx);
-            //console.log(arguments[idx]);
- 		}
+var tab = [[1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]];
+var flattenArray = [];
+var uniqueArray = [];
 
- 	  while(idx == -1)                                        // Tant que des éléments correspondent
-	    {
-	        	output.push(arguments[idx]);                            // On les stock dans le tableau output.
-	        	idx = output.indexOf(arguments[i], idx + 1);         // On passe à l'indice suivant.
-	    }
- 	}
+for(var i = 1; i < tab.length; i++){ // we loop from the second argument's array.
+	uniqueArray = tab[i].filter(function(item, pos){
+		return tab[i].indexOf(item) == pos;
+	})
+	console.log(uniqueArray);
+    console.log('array numéro : ' + (i + 1) + ' => [' + tab[i] + ']');
+	for(var j = 0; j < uniqueArray.length; j++){ //We loop on each element of the array.
+
+    //console.log(typeof tab[i][j]);
+    flattenArray.push(uniqueArray[j]);
+	}
+}
+
+console.log(flattenArray);
+//Don't touch to the code below
+$(document).ready(function()
+{
+	$(".test").html(flattenArray);
+});

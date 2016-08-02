@@ -7,34 +7,34 @@ e.g. for 1 and 3 - find the smallest common multiple of both 1 and 3 that is eve
 function smallestCommons(arr) {
   
   // Sort array from greater to lowest
-  arr.sort(function(a, b) {return b - a;}); // Inverser les arguments
-  
+  arr.sort(function(a, b) {return b - a;}); // Inverser les arguments du plus grand au plus petit.
   // Create new array and add all values from greater to smaller from the original array.
   var newArr = [];                         // Creer un array vide newArr // .
-  for (var i = arr[0]; i >= arr[1]; i--) { // On recupère tous les nombres entre 1 et 5 soit [4,3,2].
-    console.log(i);
-    newArr.push(i);                        // On chaque valeur dans un nouveau tableau.
+  for (var i = arr[0]; i >= arr[1]; i--) { // Tant que l'index 0 est superieur ou égal à l'index 1 exemple(index 0 => 5 et index 1 => 1) on decremente.
+    newArr.push(i);                        // On ajoute chaque nouvelle index dans le tableau.
   }
 
   // Variables needed declared outside the loops.
   var quot = 0; // le quotien
   var loop = 1; // On recupère l'iteration
-  var n; // La taille du tableau
+  var n = 2; // La taille du tableau
 
   do { // run code while n is not the same as the array length.
-    quot = newArr[0] * loop * newArr[1];
-    console.log('element-1: ' + newArr[0]);
-    console.log('element-2: ' + newArr[1]);
-    console.log('loop:' + loop);
-    console.log('quotient:' + quot);
+    quot = newArr[0] * loop * newArr[1]; // On multiplie les deux premiers elements avec les boucles.
+    
+    //console.log(newArr[0] + ' X ' + loop + ' X '+ newArr[1] + ' = ' + quot);
 
-    for (n = 2; n < newArr.length; n++) {
-      if (quot % newArr[n] !== 0) {
-        break;
+    for (n ; n < newArr.length; n++) { // On va parcourir le tableau newArr à partir du 2 ème élément..
+      console.log('index: ' + n + ' = ' +' valeur : ' + newArr[n]);
+      if (quot % newArr[n] !== 0) { // Si le multiple des deux premiers éléments du tableau n'est pas divisible par le reste des éléments du tableau.
+        break; // On passe à l'élément suivant.
       }
     }
-    loop++;
+
+    loop++; // On incremente la loop.
+
   } while (n !== newArr.length); // On boucle tant que le array n'est pas fini.
+
   return quot;                   // On retourne le resultat.
 }
 
@@ -43,3 +43,8 @@ $(document).ready(function()
 {
   $(".test").html(smallestCommons([1,5]));
 });
+
+// console.log('element-1: ' + newArr[0]);
+// console.log('element-2: ' + newArr[1]);
+// console.log('loop:' + loop);
+// console.log('quotient:' + quot);
