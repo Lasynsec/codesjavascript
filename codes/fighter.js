@@ -29,6 +29,7 @@ var players = Object.create(Character);
 		this.constructChars(name,health,strength); // correspond à la classe mere.
 	};
 
+	// metho player.
 	players.describeGodShell = function(){ // On dit
     	this.describeChars();
     };
@@ -38,7 +39,7 @@ var ia = Object.create(Character);
     // constructeur ai
     ia.constructiA = function(name,health,strength,race){
     	this.constructChars(name,health,strength); // correspond à la classe mere.
-    	this.race;
+    	this.race; // On ajoute une propriété.
     };
 
      ia.describeEagleNight = function(){ // On dit
