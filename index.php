@@ -8,6 +8,6 @@
   <body>
       <p class='test'></p>
       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-      <script src="http://codesjavascript.com/codes/symetricDifference.js"></script>
+      <script src="http://codesjavascript.com/codes/checkCashRegister.js"></script>
   </body>
 </html>
